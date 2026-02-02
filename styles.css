@@ -1,0 +1,232 @@
+:root {
+    --primary: #E6FF00;
+    --secondary: #2C3E50;
+    --accent: #FF5733;
+}
+
+body { margin: 0; font-family: 'Inter', sans-serif; background-color: #f4f4f4; color: var(--secondary); }
+header { background-color: var(--secondary); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+.logo { color: var(--primary); font-weight: bold; font-size: 1.5rem; }
+nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
+
+.hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1350&q=80'); background-size: cover; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+h1 { font-family: 'Bebas Neue', cursive; font-size: 4rem; color: var(--primary); }
+
+.journey-btn { background-color: var(--primary); color: var(--secondary); padding: 18px 45px; font-family: 'Bebas Neue'; font-weight: bold; cursor: pointer; border: none; box-shadow: 6px 6px 0px var(--secondary); text-transform: uppercase; }
+.container { padding: 50px 10%; }
+.section-title { border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 30px; }
+
+/* Route Planner UI */
+.route-planner-ui { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+.input-group { display: flex; gap: 20px; margin-bottom: 20px; }
+.input-field { flex: 1; position: relative; }
+.input-field label { display: block; font-weight: bold; font-size: 0.8rem; color: var(--secondary); text-transform: uppercase; }
+.input-field input { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+.gps-btn { position: absolute; right: 10px; top: 32px; background: none; border: none; cursor: pointer; font-size: 1.2rem; }
+
+/* Dashboard Above Map */
+.results-dashboard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; background: var(--secondary); padding: 20px; border-radius: 12px; }
+.metric-card { text-align: center; }
+.metric-label { display: block; color: var(--primary); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
+.metric-value { color: white; font-size: 1.5rem; font-weight: bold; margin-top: 5px; display: block; }
+
+.leaderboard-wrapper { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.leaderboard-table { width: 100%; border-collapse: collapse; }
+.leaderboard-table th { background: var(--secondary); color: var(--primary); padding: 18px; text-align: left; font-family: 'Bebas Neue'; }
+.leaderboard-table td { padding: 15px; border-bottom: 1px solid #eee; }
+.live-ticker { background: var(--primary); padding: 15px; text-align: center; font-weight: bold; }
+
+.alert-popup { display: none; position: fixed; top: 20px; left: 20px; background: var(--secondary); color: white; padding: 20px; border-radius: 10px; border-left: 5px solid var(--primary); z-index: 10001; }
+.secondary-btn { background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 8px 18px; border-radius: 20px; cursor: pointer; }
+footer { background: var(--secondary); color: white; text-align: center; padding: 40px; }
+
+/* Tracking Controls */
+.tracking-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.start-btn {
+    background-color: #27ae60; /* Success Green */
+    color: white;
+    flex: 1;
+    padding: 15px;
+    border: none;
+    font-family: 'Bebas Neue';
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.complete-btn {
+    background-color: var(--accent); /* Safety Orange */
+    color: white;
+    flex: 1;
+    padding: 15px;
+    border: none;
+    font-family: 'Bebas Neue';
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* PHASE 1: Authentication & Landing Page Styling */
+#auth-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001; /* High z-index to stay on top */
+}
+
+#login-form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: #333;
+}
+
+
+#login-form h2 {
+    font-family: 'Bebas Neue', cursive; /* Headline Font */
+    color: var(--secondary);
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif; /* Body Font */
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+#login-form input:focus {
+    border-color: var(--primary); /* Neon Yellow Focus */
+    outline: none;
+    background-color: #fffdec;
+}
+
+/* Eye Icon Positioning */
+.pass-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#eye-btn {
+    position: absolute;
+    right: 15px;
+    top: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/* Buttons inside the Login Box */
+.auth-btn-main {
+    width: 100%;
+    background-color: var(--primary); /* Neon Yellow */
+    color: var(--secondary);
+    font-weight: bold;
+    border: none;
+    padding: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.auth-btn-main:hover {
+    background-color: #fff;
+    transform: scale(1.02);
+}
+
+.auth-btn-sub {
+    background: none;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: 12px;
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* PHASE 2: Tracking Buttons (Athlete View) */
+.tracking-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#start-run-btn {
+    background-color: #27ae60; /* Success Green for Go */
+    color: white;
+}
+
+#complete-run-btn {
+    background-color: var(--accent); /* Safety Orange for Stop */
+    color: white;
+}
+/* Ensure map tiles always fill their container */
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* PHASE 3: Leaderboard & Badges */
+.leaderboard-table tr.my-rank {
+    background-color: rgba(230, 255, 0, 0.1); /* Light Neon Yellow highlight */
+    border-left: 4px solid var(--primary);
+}
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badge-legend {
+    background-color: #f1c40f; /* Gold */
+    color: #000;
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+}
+
+.badge-pro {
+    background-color: var(--accent); /* Safety Orange */
+    color: white;
+}
+
+.badge-rookie {
+    background-color: #bdc3c7; /* Silver/Gray */
+    color: var(--secondary);
+}
+
+/* Hover effect for Tribe interaction */
+.leaderboard-table tbody tr:hover {
+    background-color: #f9f9f9;
+    cursor: default;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Urban Runner’s Collective</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+</head>
+<body>
+    <div id="custom-alert" class="alert-popup">
+        <span id="alert-message"></span>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+
+    <main id="main-content"> <header>
+            <div class="logo">URC 🏃‍♂️</div>
+            <nav>
+                <a href="#routes-section">Plan Route</a>
+                <a href="#activities">My Activities</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Push Beyond.</h1>
+                <button class="journey-btn" onclick="document.getElementById('routes-section').scrollIntoView()">Start Journey</button>
+            </div>
+        </section>
+
+        <section id="routes-section" class="container">
+            <h2 class="section-title">Athlete Route Planner</h2>
+            <div class="route-planner-ui">
+                <div class="input-group">
+                    <div class="input-field">
+                        <label>Starting Point</label>
+                        <input type="text" id="start-point" placeholder="Detecting location...">
+                        <button onclick="findMe()" class="gps-btn">📍</button>
+                    </div>
+                    <div class="input-field">
+                        <label>Destination (Type or Click Map)</label>
+                        <input type="text" id="end-point" placeholder="Type destination & press Enter">
+                    </div>
+                </div>
+
+                <div id="route-results" class="results-dashboard">
+                    <div class="metric-card">
+                        <span class="metric-label">📏 Distance</span>
+                        <span id="dist-val" class="metric-value">-- km</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">💧 Water Needs</span>
+                        <span id="water-val" class="metric-value">-- L</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">🔥 Burn</span>
+                        <span id="cal-val" class="metric-value">-- kcal</span>
+                    </div>
+                </div>
+
+                <div id="map" style="height: 450px; border-radius: 15px; background: #eee; margin-bottom: 20px; width: 100%;"></div>
+
+                <div class="tracking-actions">
+                    <button id="start-run-btn" class="auth-btn-main" onclick="startRun()">Start Tracking Run</button>
+                    <button id="complete-run-btn" class="auth-btn-sub" onclick="completeRun()" style="display:none;">Finish & Save Run</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="container">
+            <h2 class="section-title">Recent Tribe Activity</h2>
+            <div class="leaderboard-wrapper">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr><th>Date</th><th>Distance</th><th>Hydration</th><th>Burn</th></tr>
+                    </thead>
+                    <tbody id="activity-body">
+                        <tr><td>2026-02-02</td><td><strong>5.20 km</strong></td><td>0.5 L</td><td>322 kcal</td></tr>
+                        <tr><td>2026-02-01</td><td><strong>3.45 km</strong></td><td>0.3 L</td><td>214 kcal</td></tr>
+                        <tr><td>2026-01-30</td><td><strong>8.10 km</strong></td><td>0.8 L</td><td>502 kcal</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Urban Runner’s Collective | Coimbatore, Tamil Nadu</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Base Reset to ensure full screen */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        /* Common styles for all sections */
+        section {
+            height: 100vh;      /* Full height */
+            vertical-align: top; /* Ensures they align at the top edge */
+            text-align: top;
+            color: rgba(15, 54, 198, 0.906);
+            padding-top: 40vh;  /* Centers text vertically roughly */
+        }
+
+        /* 2. KERALA: INTERNAL CSS */
+        .kerala {
+            display: inline-block;
+            width: 33.33%;
+            background-color: #27ae60;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="font-size: 0;"> <section style="display: inline-block; width: 33.33%; background-color: #2c3e50;" class="tn">
+        <h1 style="font-size: 42px;">Tamil Nadu</h1>
+        <h2 style="font-size: 32px">Concept:</h2>
+        <p style="font-size: 16px;">You put the style rules directly inside the HTML tag.</p>
+        <h2 style="font-size: 32px">Analogy:</h2>
+        <p style="font-size: 16px;">Like writing a note directly on a specific brick in a building</p>
+        <h2 style="font-size: 32px">key fact:</h2>
+        <p style="font-size: 16px;">It is the "loudest" style. If you have an external file saying the background is red, but the inline style says it is blue, the section will be blue.</p>
+    </section>
+
+    <section class="kerala">
+        <h1 style="font-size: 42px;">Kerala</h1>
+        <h2 style="font-size: 32px">Concept:</h2>
+        <p style="font-size: 16px;">You write the styles in a style block at the top of your HTML file.</p>
+        <h2 style="font-size: 32px">Analogy:</h2>
+        <p style="font-size: 16px;">Like a set of instructions pasted on the front door of one specific house.</p>
+        <h2 style="font-size: 32px">key fact:</h2>
+        <p style="font-size: 16px;">It is great for single-page sites because you don't have to manage extra files, but it makes the HTML file very long if you have a lot of design.</p>
+    </section>
+
+    <section class="karnataka">
+    <h1 class="state-title">Karnataka</h1>
+    <h2 class="sub-heading">Concept:</h2>
+    <p class="description">You write the styles in a separate file (e.g., style.css) and link it to the HTML.</p>
+    <h2 class="sub-heading">Analogy:</h2>
+    <p class="description">Like a master blueprint kept in an office that controls 100 different buildings at once.</p>
+    <h2 class="sub-heading">Key Fact:</h2>
+    <p class="description">This is the professional standard. It keeps your HTML clean and allows site-wide updates by editing just one file.</p>
+</section>
+
+</body>
+</html>
