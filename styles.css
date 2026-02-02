@@ -5,7 +5,7 @@
 }
 
 body { margin: 0; font-family: 'Inter', sans-serif; background-color: #f4f4f4; color: var(--secondary); }
-header { background-color: var(--secondary); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+header { background-color: var(--secondary); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10000; }
 .logo { color: var(--primary); font-weight: bold; font-size: 1.5rem; }
 nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
 
